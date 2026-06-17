@@ -1,0 +1,69 @@
+import React from 'react';
+import './Packages.css';
+
+const Packages = () => {
+  const deluxItems = [
+    { name: 'Soup', count: 2 }, { name: 'Soup Starter', count: 1 }, { name: 'Chaat House', count: 1 },
+    { name: 'Indian Live Counter', count: 3 }, { name: 'Salad Flavour', count: 1 }, { name: 'Farsan', count: 1 },
+    { name: 'Sweet Liquid', count: 1 }, { name: 'Sweet Live', count: 1 }, { name: 'Sabji Regular', count: 1 },
+    { name: 'Sabji Live', count: 1 }, { name: 'Roti Live', count: 2 }, { name: 'Dal Preparation', count: 1 },
+    { name: 'Rice Preparation', count: 1 }, { name: 'Butter Milk', count: 1 }, { name: 'Mineral Water - 200 ML', count: 1 },
+    { name: 'Mukhwas Flavour', count: 2 }
+  ];
+
+  const premiumItems = [
+    { name: 'Fresh Welcome Drinks', count: 2 }, { name: 'Starter on Rotation', count: 1 }, { name: 'Soup', count: 2 },
+    { name: 'Soup Starter', count: 1 }, { name: 'Chaat House', count: 1 }, { name: 'Indian Live Counter', count: 2 },
+    { name: 'Salad Flavour', count: 5 }, { name: 'Farsan', count: 1 }, { name: 'Sweet Liquid', count: 1 },
+    { name: 'Sweet Live', count: 1 }, { name: 'Sabji Regular', count: 1 }, { name: 'Sabji Live', count: 1 },
+    { name: 'Roti Live', count: 2 }, { name: 'Dal Preparation', count: 1 }, { name: 'Rice Preparation', count: 1 },
+    { name: 'Butter Milk', count: 1 }, { name: 'Mineral Water - 200 ML', count: 1 }, { name: 'Mukhwas Flavour', count: 2 },
+    { name: 'Ice Cream Dessert', count: 1 }
+  ];
+
+  const goldItems = [
+    { name: 'Special Mocktail Bar', count: 1 }, { name: 'Starter on Rotation', count: 2 }, { name: 'Soup', count: 2 },
+    { name: 'Soup Starter', count: 2 }, { name: 'Chaat House', count: 2 }, { name: 'Indian Live Counter', count: 2 },
+    { name: 'International Live Counter', count: 8 }, { name: 'Salad Flavour', count: 2 }, { name: 'Farsan / Back Dish', count: 2 },
+    { name: 'Sweet Liquid', count: 1 }, { name: 'Sweet Any', count: 2 }, { name: 'Sabji Regular', count: 1 },
+    { name: 'Sabji Live', count: 2 }, { name: 'Roti Live', count: 3 }, { name: 'Dal Preparation', count: 2 },
+    { name: 'Rice Preparation', count: 2 }, { name: 'Butter Milk', count: 1 }, { name: 'Mineral Water - 200 ML', count: 1 },
+    { name: 'Mukhwas Flavour', count: 2 }, { name: 'Regular Dessert', count: 2 }, { name: 'Special Fruit Counter', count: 1 }
+  ];
+
+  const renderMenu = (title, items, themeClass) => (
+    <div className={`menu-board ${themeClass}`}>
+      <div className="menu-header">
+        <h2>{title}</h2>
+      </div>
+      <ul className="menu-list">
+        {items.map((item, index) => (
+          <li key={index}>
+            <span className="item-name">{item.name}</span>
+            <span className="dots"></span>
+            <span className="item-count">{item.count}</span>
+          </li>
+        ))}
+      </ul>
+      <div className="menu-footer">
+        <p>:: EXTRA CHARGEABLE ::</p>
+        <p>PRO GIRLS | BOMBAY SERVICE BOYZ | COUNTER DISPLAY THEME | GST CHARGE</p>
+      </div>
+    </div>
+  );
+
+  return (
+    <div className="packages-page page-container animate-fade-in">
+      <h1 className="section-title">Our Packages</h1>
+      <p className="text-center mb-4">Discover our meticulously crafted menus designed to elevate your celebrations.</p>
+      
+      <div className="menus-container">
+        {renderMenu('Delux Package', deluxItems, 'theme-pink')}
+        {renderMenu('Premium Package', premiumItems, 'theme-green')}
+        {renderMenu('Gold Package', goldItems, 'theme-gold')}
+      </div>
+    </div>
+  );
+};
+
+export default Packages;

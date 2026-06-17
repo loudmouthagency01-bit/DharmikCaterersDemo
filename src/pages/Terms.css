@@ -1,0 +1,51 @@
+.terms-page {
+  padding-top: 120px;
+}
+
+.language-selector {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.lang-btn {
+  padding: 8px 24px;
+  font-size: 1rem;
+}
+
+.terms-content {
+  background-color: #fff;
+  padding: 50px 60px;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.terms-list {
+  padding-left: 20px;
+}
+
+.terms-list li {
+  margin-bottom: 20px;
+  font-size: 1.15rem;
+  color: var(--dark-text);
+  line-height: 1.6;
+  padding-left: 10px;
+}
+
+.terms-list li::marker {
+  color: var(--primary-orange);
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .terms-content {
+    padding: 30px;
+  }
+  .terms-list li {
+    font-size: 1.05rem;
+  }
+}
