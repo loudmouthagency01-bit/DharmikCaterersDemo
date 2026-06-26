@@ -18,7 +18,7 @@ const Contact = () => {
               <div className="info-icon"><MapPin /></div>
               <div>
                 <h3>Location</h3>
-                <p>123 Catering Lane, Food City</p>
+                <p>Ahmedabad , Gujarat.</p>
               </div>
             </div>
             
@@ -26,7 +26,7 @@ const Contact = () => {
               <div className="info-icon"><Phone /></div>
               <div>
                 <h3>Phone</h3>
-                <p>+91 98765 43210</p>
+                <p>9409077980</p>
               </div>
             </div>
             
@@ -34,7 +34,7 @@ const Contact = () => {
               <div className="info-icon"><Mail /></div>
               <div>
                 <h3>Email</h3>
-                <p>info@dharmikcaterers.com</p>
+                <p>dharmikcaterers@gmail.com</p>
               </div>
             </div>
           </div>

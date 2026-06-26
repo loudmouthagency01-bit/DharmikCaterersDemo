@@ -36,9 +36,9 @@ const Footer = () => {
         <div className="footer-section contact">
           <h3>Contact Info</h3>
           <ul>
-            <li><MapPin size={18} /> <span>123 Catering Lane, Food City</span></li>
-            <li><Phone size={18} /> <span>+91 98765 43210</span></li>
-            <li><Mail size={18} /> <span>info@dharmikcaterers.com</span></li>
+            <li><MapPin size={18} /> <span>Ahmedabad , Gujarat.</span></li>
+            <li><Phone size={18} /> <span>9409077980</span></li>
+            <li><Mail size={18} /> <span>dharmikcaterers@gmail.com</span></li>
           </ul>
         </div>
       </div>
