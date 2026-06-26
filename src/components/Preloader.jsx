@@ -2,9 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Preloader.css';
 
 const criticalAssets = [
-  { type: 'image', url: 'https://images.unsplash.com/photo-1555244162-803834f70033?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80' },
-  { type: 'video', url: '/reels/VID-20260619-WA0003.mp4' },
-  { type: 'video', url: '/reels/VID-20260619-WA0004.mp4' }
+  { type: 'image', url: 'https://images.unsplash.com/photo-1555244162-803834f70033?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80' }
 ];
 
 const Preloader = ({ onFinish }) => {
@@ -30,19 +28,16 @@ const Preloader = ({ onFinish }) => {
           img.src = asset.url;
           img.onload = resolve;
           img.onerror = resolve; // Resolve anyway to avoid infinite hang
-        } else if (asset.type === 'video') {
-          // Fetch video into cache
-          fetch(asset.url)
-            .then(resolve)
-            .catch(resolve);
+        } else {
+          resolve();
         }
       });
     });
 
-    // Wait for all critical assets OR a maximum timeout of 2.5 seconds
+    // Wait for all critical assets OR a maximum timeout of 1 second
     Promise.race([
       Promise.all(loadPromises),
-      new Promise(resolve => setTimeout(resolve, 2500))
+      new Promise(resolve => setTimeout(resolve, 1000))
     ]).then(() => {
       finishLoading();
     });

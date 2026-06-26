@@ -15,9 +15,7 @@ export const startBackgroundFetch = () => {
   
   runner(() => {
     galleryAssets.forEach(url => {
-      if (url.endsWith('.mp4')) {
-        fetch(url, { priority: 'low' }).catch(() => {});
-      } else {
+      if (!url.endsWith('.mp4')) {
         const img = new Image();
         img.src = url;
       }
