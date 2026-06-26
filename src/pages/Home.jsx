@@ -47,6 +47,7 @@ const ReelVideo = ({ src }) => {
     <video 
       ref={videoRef}
       src={src} 
+      preload="auto"
       muted loop playsInline controls 
       className="reel-video"
       onMouseEnter={handleMouseEnter}
