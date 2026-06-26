@@ -37,7 +37,7 @@ const Footer = () => {
           <h3>Contact Info</h3>
           <ul>
             <li><MapPin size={18} /> <span>Ahmedabad , Gujarat.</span></li>
-            <li><Phone size={18} /> <span>9409077980</span></li>
+            <li><Phone size={18} /> <span>+91 94090 77980</span></li>
             <li><Mail size={18} /> <span>dharmikcaterers@gmail.com</span></li>
           </ul>
         </div>
