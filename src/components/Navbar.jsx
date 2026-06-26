@@ -25,13 +25,14 @@ const Navbar = () => {
     { name: 'About Us', path: '/about' },
     { name: 'Packages', path: '/packages' },
     { name: 'Gallery', path: '/gallery' },
-    { name: 'Contact', path: '/contact' },
+    { name: 'Terms', path: '/terms' },
   ];
 
   return (
     <header className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="navbar-container">
         <Link to="/" className="navbar-logo">
+          <img src="/logo.png" alt="Dharmik Caterers Logo" className="nav-logo-img" />
           <div className="logo-text">
             <span className="logo-dharmik">DHARMIK</span>
             <span className="logo-sub">An Exclusive Experience</span>

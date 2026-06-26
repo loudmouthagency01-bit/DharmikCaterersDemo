@@ -19,7 +19,7 @@
   background-color: #fff;
   padding: 50px 60px;
   border-radius: 20px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
   max-width: 900px;
   margin: 0 auto;
 }

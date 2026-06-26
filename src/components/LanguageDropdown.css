@@ -1,0 +1,40 @@
+.language-dropdown {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--primary-green);
+  margin-left: 10px;
+}
+
+.lang-select {
+  background: transparent;
+  border: 1px solid rgba(44, 76, 59, 0.2);
+  color: var(--primary-green);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+}
+
+.lang-select:focus {
+  border-color: var(--gold);
+}
+
+.scrolled .language-dropdown {
+  color: var(--primary-green);
+}
+
+.scrolled .lang-select {
+  color: var(--primary-green);
+  border-color: rgba(44, 76, 59, 0.2);
+}
+
+@media (max-width: 768px) {
+  .language-dropdown {
+    margin: 15px 0;
+    justify-content: center;
+  }
+}

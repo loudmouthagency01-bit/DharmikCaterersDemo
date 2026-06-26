@@ -1,0 +1,63 @@
+import React, { useState, useEffect } from 'react';
+import './Preloader.css';
+
+const criticalAssets = [
+  { type: 'image', url: 'https://images.unsplash.com/photo-1555244162-803834f70033?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80' },
+  { type: 'video', url: '/reels/VID-20260619-WA0003.mp4' },
+  { type: 'video', url: '/reels/VID-20260619-WA0004.mp4' }
+];
+
+const Preloader = ({ onFinish }) => {
+  const [isFading, setIsFading] = useState(false);
+
+  useEffect(() => {
+    let hasFinished = false;
+
+    const finishLoading = () => {
+      if (hasFinished) return;
+      hasFinished = true;
+      setIsFading(true);
+      setTimeout(() => {
+        onFinish();
+      }, 500); // Wait for fade out animation
+    };
+
+    // Preload critical assets
+    const loadPromises = criticalAssets.map(asset => {
+      return new Promise((resolve) => {
+        if (asset.type === 'image') {
+          const img = new Image();
+          img.src = asset.url;
+          img.onload = resolve;
+          img.onerror = resolve; // Resolve anyway to avoid infinite hang
+        } else if (asset.type === 'video') {
+          // Fetch video into cache
+          fetch(asset.url)
+            .then(resolve)
+            .catch(resolve);
+        }
+      });
+    });
+
+    // Wait for all critical assets OR a maximum timeout of 2.5 seconds
+    Promise.race([
+      Promise.all(loadPromises),
+      new Promise(resolve => setTimeout(resolve, 2500))
+    ]).then(() => {
+      finishLoading();
+    });
+
+  }, [onFinish]);
+
+  return (
+    <div className={`preloader-overlay ${isFading ? 'fade-out' : ''}`}>
+      <div className="preloader-content">
+        <img src="/logo.png" alt="Dharmik Caterers" className="preloader-logo" />
+        <h1 className="preloader-text">Dharmik Caterers</h1>
+        <div className="preloader-spinner"></div>
+      </div>
+    </div>
+  );
+};
+
+export default Preloader;
