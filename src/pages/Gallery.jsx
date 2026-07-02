@@ -63,7 +63,7 @@ const Gallery = () => {
     "/WhatsApp Image 2026-06-20 at 1.36.27 PM (2).jpeg",
     "/WhatsApp Image 2026-06-20 at 1.36.27 PM.jpeg",
     "/WhatsApp Image 2026-06-20 at 1.41.02 PM.jpeg",
-    "/WhatsApp Image 2026-06-20 at 1.41.03 PM (1).jpeg",
+
     "/WhatsApp Image 2026-06-20 at 1.41.03 PM.jpeg",
     "/WhatsApp Image 2026-06-20 at 1.41.04 PM.jpeg",
     "/ai_images/luxury_catering_display_1782061133933.png",
