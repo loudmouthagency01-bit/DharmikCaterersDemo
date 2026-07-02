@@ -44,8 +44,8 @@
 }
 
 .logo-dharmik {
-  font-family: var(--font-heading);
-  font-size: 1.8rem;
+  font-family: 'Macondo', cursive;
+  font-size: 2.2rem;
   font-weight: 700;
   color: var(--primary-orange);
   line-height: 1;
